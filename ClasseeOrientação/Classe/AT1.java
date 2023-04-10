@@ -1,35 +1,26 @@
 package ClasseeOrientação.Classe;
 
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
 public class AT1 {
-
-    
-public class Pessoa {
-
-    private String nome;
-    private int idade;
-    
-
-public Pessoa(String nome, int idade){
-    this.nome = nome;
-    this.idade = idade;
-}
-
- public String getnome() {
-    return nome;    
-}
-
- public void setNome(String nome) {
-    this.nome = "Jandilson";
-}
+    public static String nome;
+    public static int idade;
 
 
-}
+        public void Pessoa(String nome, int idade) {
+            
+            this.nome = nome;
+            this.idade = idade;
+           
+        }
 
-
-
-
-
-
+    public static void main(String[] args) {
+        
+        nome = JOptionPane.showInputDialog("Digite seu nome:");
+        idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade:"));
+    }
 }
 
 
