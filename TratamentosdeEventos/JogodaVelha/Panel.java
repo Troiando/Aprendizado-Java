@@ -33,6 +33,7 @@ public class Panel extends JPanel {
             if (botoes[linha][0].getText().equals(botoes[linha][1].getText()) &&
                     botoes[linha][0].getText().equals(botoes[linha][2].getText()) &&
                     !botoes[linha][0].getText().equals("")) {
+                        somM("cavalo");
                 JOptionPane.showMessageDialog(this, "Jogador " + turno + " venceu!");
                 reiniciarJogo();
                 return;
@@ -44,6 +45,7 @@ public class Panel extends JPanel {
             if (botoes[0][coluna].getText().equals(botoes[1][coluna].getText()) &&
                     botoes[0][coluna].getText().equals(botoes[2][coluna].getText()) &&
                     !botoes[0][coluna].getText().equals("")) {
+                        somM("cavalo");
                 JOptionPane.showMessageDialog(this, "Jogador " + turno + " venceu!");
                 reiniciarJogo();
                 return;
@@ -52,12 +54,20 @@ public class Panel extends JPanel {
 
         // Verifica diagonais
         if (botoes[0][0].getText().equals(botoes[1][1].getText()) &&
-                botoes[0][0].getText().equals(botoes[2][2].getText()) &&
-                !botoes[0][0].getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Jogador " + turno + " venceu!");
-            reiniciarJogo();
-            return;
-        }
+        botoes[0][0].getText().equals(botoes[2][2].getText()) &&
+        !botoes[0][0].getText().isEmpty()) {
+        somM("cavalo");
+        JOptionPane.showMessageDialog(this, "Jogador " + turno + " venceu!");
+        reiniciarJogo();
+        return;
+    } else if (botoes[2][0].getText().equals(botoes[1][1].getText()) &&
+            botoes[2][0].getText().equals(botoes[0][2].getText()) &&
+            !botoes[2][0].getText().isEmpty()) {
+        somM("cavalo");
+        JOptionPane.showMessageDialog(this, "Jogador " + turno + " venceu!");
+        reiniciarJogo();
+        return;
+    }
 
         // Verifica empate
         boolean empate = true;
@@ -117,12 +127,5 @@ public class Panel extends JPanel {
         AudioClip audioM = Applet.newAudioClip(url);
         audioM.play();
     }
-
-    // Som de empate
-    public void somE(String Movie) {
-        URL urlE = JogodaVelha.class.getResource(Movie + ".wav");
-        AudioClip audioE = Applet.newAudioClip(urlE);
-        audioE.play();
-    }
-
 }
+
