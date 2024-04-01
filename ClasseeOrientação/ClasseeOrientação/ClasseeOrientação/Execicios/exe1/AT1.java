@@ -1,4 +1,4 @@
-package ClasseeOrientação.test4;
+package ClasseeOrientação.Execicios.exe1;
 
 import java.util.Locale;
 import java.util.Scanner;

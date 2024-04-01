@@ -1,4 +1,4 @@
-package ClasseeOrientação.test4;
+package ClasseeOrientação.Execicios.exe1;
 
 public class Retangulo {
 
