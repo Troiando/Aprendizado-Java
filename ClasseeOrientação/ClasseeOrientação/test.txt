@@ -1,0 +1,21 @@
+  Scanner sc = new Scanner(System.in);
+        Boletim boletim = new Boletim();
+   
+        System.out.println("Digite seu Nota 1ºTri");
+        double Nota = sc.nextDouble();
+        boletim.nota1 = Nota;
+        boletim.Nota(Nota);
+
+        System.out.println("Digite seu Nota 2ºTri");
+        Nota = sc.nextDouble();
+        boletim.nota2 = Nota;
+        boletim.Nota(Nota);
+
+        System.out.println("Digite seu Nota 3ºTri");
+        Nota = sc.nextDouble();
+        boletim.nota3 = Nota;
+        boletim.Nota(Nota);
+
+       System.out.println(""+boletim.nota1);
+       System.out.println(""+boletim.nota2);
+       System.out.println(""+boletim.nota3);
