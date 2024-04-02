@@ -12,22 +12,29 @@ public class Exe1 {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Boletim boletim = new Boletim();
-        double[] nota,valida;
-        nota = new double[3];
+        Student boletim = new Student();
+        double[] notaP,notaST;
+        notaP = new double[1];
+        notaST = new double[2];
 
+        boletim.notaP = notaP;
+        boletim.notaST = notaST;
 
-        boletim.nota = nota;
-
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             System.out.println("Digite seu Nota " + (i + 1) + "º Tri");
-            nota[i] = sc.nextDouble();
-            boletim.Nota(nota[i]);
+            notaP[i] = sc.nextDouble();
+            boletim.NotaP(i);
         }
 
-        System.out.println("" + boletim.nota[0]);
-        System.out.println("" + boletim.nota[1]);
-        System.out.println("" + boletim.nota[2]);
+        for (int i = 0; i < 2; i++) {
+            System.out.println("Digite seu Nota " + (i + 2) + "º Tri");
+            notaST[i] = sc.nextDouble();
+            boletim.NotaST(i);
+        }
+
+        System.out.println("" + boletim.notaP[0]);
+        System.out.println("" + boletim.notaST[0]);
+        System.out.println("" + boletim.notaST[1]);
 
         System.out.println(boletim.soma());
 
