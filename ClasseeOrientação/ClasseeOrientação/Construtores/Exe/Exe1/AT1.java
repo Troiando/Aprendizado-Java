@@ -12,10 +12,9 @@ public class AT1 {
     public static void main(String[] args) {
         Banco banco = new Banco();
         String nomeTitular ;
-        double saldoCont;
+        double depositoInicial;
         int numConta;
         Scanner sc = new Scanner(System.in);
-
 
             System.out.print("Nome Completo: ");
             nomeTitular = sc.nextLine();
@@ -23,22 +22,20 @@ public class AT1 {
             System.out.println("Numero da conta: ");
             numConta = sc.nextInt();
             
-            System.out.print("Quer depositar? ");
+            System.out.print("Fazer deposito inicial? S/N ");
             String resp = sc.nextLine();
 
-            if (banco.verificarResp(resp)){
-
+            //Verificar S/N
+            if (banco.verificarResp(resp)==true){
+                depositoInicial = sc.nextDouble();
+                banco.saldoTotal(depositoInicial);
+                banco.cadastrar(nomeTitular, numConta, depositoInicial);
             }else {
-                banco.cadastrar(nomeTitular, numConta);
-
+                banco.cadastrar(nomeTitular, numConta, depositoInicial=0);
             }
 
-
-
-            
-               
-         
-
+            System.out.println(banco.test());
+            System.out.println(banco.test2());
         
         sc.close();
     }
