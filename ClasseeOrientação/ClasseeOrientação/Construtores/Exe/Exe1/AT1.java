@@ -11,33 +11,48 @@ public class AT1 {
 
     public static void main(String[] args) {
         Banco banco = new Banco();
-        String nomeTitular ;
+        String nomeTitular, resp;
         double depositoInicial;
-        int numConta;
+        int numConta, home;
         Scanner sc = new Scanner(System.in);
 
-            System.out.print("Nome Completo: ");
-            nomeTitular = sc.nextLine();
+        while (true) {
+            System.out.println("1 - Cadastro");
+            System.out.println("2 - Visualizar Saldo");
+            home = sc.nextInt();
 
-            System.out.println("Numero da conta: ");
-            numConta = sc.nextInt();
-            
-            System.out.print("Fazer deposito inicial? S/N ");
-            String resp = sc.nextLine();
+            switch (home) {
+                case 1:
 
-            //Verificar S/N
-            if (banco.verificarResp(resp)==true){
-                depositoInicial = sc.nextDouble();
-                banco.saldoTotal(depositoInicial);
-                banco.cadastrar(nomeTitular, numConta, depositoInicial);
-            }else {
-                banco.cadastrar(nomeTitular, numConta, depositoInicial=0);
+                    System.out.println("Nome Completo: ");
+                    nomeTitular = sc.nextLine();
+                    sc.nextLine();
+
+                    System.out.println("Numero da conta: ");
+                    numConta = sc.nextInt();
+
+                    System.out.print("Fazer deposito inicial? S/N ");
+                    resp = sc.nextLine();
+
+                    // Verificar S/N
+                    if (banco.verificarResp(resp) == true) {
+                        depositoInicial = sc.nextDouble();
+                        banco.somaSaldo(depositoInicial);
+                        banco.cadastrar(nomeTitular, numConta, depositoInicial);
+                    } else {
+                        banco.cadastrar(nomeTitular, numConta, depositoInicial = 0);
+                    }
+                    break;
+
+                case 2:
+                    banco.verSaldo();
+                    break;
+
+                default:
+                    break;
             }
 
-            System.out.println(banco.test());
-            System.out.println(banco.test2());
-        
-        sc.close();
+        }
     }
 
 }

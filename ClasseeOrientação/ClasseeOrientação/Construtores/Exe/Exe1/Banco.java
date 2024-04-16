@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Banco {
     private String nomeTitular;
-    private double numConta, saldoCont, depositoInicial;
+    private double numConta, saldoCont, deposito;
     public Scanner sc = new Scanner(System.in);
 
     public Banco() {
@@ -34,34 +34,41 @@ public class Banco {
         this.saldoCont = saldoCont;
     }
 
-    public double getDepositoInicial() {
-        return depositoInicial;
+    public double getDeposito() {
+        return deposito;
     }
 
-    public void setDepositoInicial(double depositoInicial) {
-        this.depositoInicial = depositoInicial;
+    public void setDeposito(double deposito) {
+        this.deposito = deposito;
     }
   
 
     // Funções
 
-    public void cadastrar(String nomeTitular, int numConta, double saldoInicial) {
+    public void cadastrar(String nomeTitular, int numConta, double depositoInicial) {
         this.nomeTitular = nomeTitular;
         this.numConta = numConta;
-        this.depositoInicial = saldoInicial;
-        System.out.println("Cadastro feito com sucesso");
+        this.deposito = depositoInicial;
+        System.out.println("\nCadastro feito com sucesso");
     }
 
-    public void saldoTotal(double saldoInicial) {
-        saldoInicial =+ saldoCont;
-        System.out.println("Deposito inicial feito com Sucesso");
+    //Soma de Saldo da conta
+    public void somaSaldo(double deposito) {
+        this.saldoCont += deposito;
+        System.out.println("\nDeposito feito com Sucesso\n");
     }
 
+    //Visualizar Saldo
+    public void verSaldo(){
+        System.out.println("Saldo Total: "+this.saldoCont);
+    }
+
+    //Verificador de S/N
     public boolean verificarResp(String resp) {
         resp = sc.nextLine();
 
         if (resp.isEmpty()) {
-            System.err.println("String não preenchida");
+            System.err.println("Valor não preenchido");
             System.out.println("Prosseguir sem depósito inicial");
             return false;
         } else if (resp.toLowerCase().equals("s")) {
@@ -76,12 +83,6 @@ public class Banco {
         }
     }
 
-    public String test() {
-        return nomeTitular;
-    }
-
-    public double test2() {
-        return depositoInicial;
-    }
+   
 
 }
