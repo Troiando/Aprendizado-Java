@@ -1,9 +1,10 @@
-package Construtores.Exe.Exe1;
+package Construtores.Encapsular.Exe1;
 
 import java.util.Scanner;
 
 public class Banco {
     private String nomeTitular;
+    private int tx = 5;
     private double saldoCont, deposito, saque;
     private int numConta;
     private Scanner sc;
@@ -26,10 +27,6 @@ public class Banco {
         return numConta;
     }
 
-    public void setNumConta(int numConta) {
-        this.numConta = numConta;
-    }
-
     public double getSaldoCont() {
         return saldoCont;
     }
@@ -44,6 +41,10 @@ public class Banco {
 
     public void setDeposito(double deposito) {
         this.deposito = deposito;
+    }
+    
+    public int getTx() {
+        return tx;
     }
 
     public double getSaque() {
@@ -73,6 +74,7 @@ public class Banco {
     // Saque
     public void saqueSub(double saque) {
         this.saldoCont -= saque;
+        this.saldoCont -= this.tx;
         System.out.println("\nSaque feito com Sucesso\n");
     }
 
