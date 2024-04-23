@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Banco {
     private String nomeTitular;
-    private int tx = 5;
-    private double saldoCont, deposito, saque;
+    private double balance;
     private int numConta;
     private Scanner sc;
 
@@ -27,32 +26,8 @@ public class Banco {
         return numConta;
     }
 
-    public double getSaldoCont() {
-        return saldoCont;
-    }
-
-    public void setSaldoCont(double saldoCont) {
-        this.saldoCont = saldoCont;
-    }
-
-    public double getDeposito() {
-        return deposito;
-    }
-
-    public void setDeposito(double deposito) {
-        this.deposito = deposito;
-    }
-    
-    public int getTx() {
-        return tx;
-    }
-
-    public double getSaque() {
-        return saque;
-    }
-
-    public void setSaque(double saque) {
-        this.saque = saque;
+    public double getBalance() {
+        return balance;
     }
 
     // Funções/Metodo
@@ -61,20 +36,19 @@ public class Banco {
     public void cadastrar(int numConta, String nomeTitular, double depositoInicial) {
         this.nomeTitular = nomeTitular;
         this.numConta = numConta;
-        this.deposito = depositoInicial;
+        this.balance = depositoInicial;
         System.out.println("\nCadastro feito com sucesso\n");
     }
 
     // Soma de Saldo da conta
     public void somaSaldo(double deposito) {
-        this.saldoCont += deposito;
+        balance += deposito;
         System.out.println("\nDeposito feito com Sucesso\n");
     }
 
     // Saque
     public void saqueSub(double saque) {
-        this.saldoCont -= saque;
-        this.saldoCont -= this.tx;
+        balance -= saque + 5.0;
         System.out.println("\nSaque feito com Sucesso\n");
     }
 
@@ -105,7 +79,7 @@ public class Banco {
                 + ", "
                 + "Titular: " + this.nomeTitular
                 + ", "
-                + "Saldo Total: " + String.format("%.2f", this.saldoCont) + "\n");
+                + "Saldo Total: " + String.format("%.2f", this.balance) + "\n");
     }
 
     // Método para fechar o Scanner

@@ -13,42 +13,37 @@ public class AT1 {
 
     public static void main(String[] args) {
         Banco banco = new Banco();
-        int numConta;
-        String nomeTitular, resp;
-        double depositoInicial,deposito,saque;
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Nome Completo: ");
-        nomeTitular = sc.nextLine();
+        String nomeTitular = sc.nextLine();
 
         System.out.print("Numero da conta: ");
-        numConta = sc.nextInt();
+        int numConta = sc.nextInt();
 
         System.out.print("Fazer deposito inicial? S/N ");
-        resp = sc.nextLine();
+        String resp = sc.nextLine();
 
         // Verificar S/N
         if (banco.verificarResp(resp) == true) {
-            depositoInicial = sc.nextDouble();
-            banco.somaSaldo(depositoInicial);
+            double depositoInicial = sc.nextDouble();
             banco.cadastrar( numConta,nomeTitular, depositoInicial);
         } else {
+            double depositoInicial;
             banco.cadastrar( numConta, nomeTitular, depositoInicial = 0);
         }
 
         banco.visualizar(numConta);
 
         System.out.println("Faça um deposito: ");
-        deposito = sc.nextDouble();
+        double deposito = sc.nextDouble();
         banco.somaSaldo(deposito);
         System.out.println("Saldo Atualizado");
         banco.visualizar(numConta);
 
         System.out.println("Faça um saque: ");
-        saque = sc.nextDouble();
+        double saque = sc.nextDouble();
         banco.saqueSub(saque);
         banco.visualizar(numConta);
-
-
     }
 }
