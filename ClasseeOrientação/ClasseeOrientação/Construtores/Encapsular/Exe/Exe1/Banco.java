@@ -1,4 +1,4 @@
-package Construtores.Encapsular.Exe1;
+package Construtores.Encapsular.Exe.Exe1;
 
 import java.util.Scanner;
 
