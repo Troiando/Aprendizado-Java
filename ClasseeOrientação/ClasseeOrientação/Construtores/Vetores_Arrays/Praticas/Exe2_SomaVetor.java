@@ -3,6 +3,10 @@ package Construtores.Vetores_Arrays.Praticas;
 import java.util.Locale;
 import java.util.Scanner;
 
+// Faça um programa que leia N números reais e armazene-os em um vetor. Em seguida:
+// - Imprimir todos os elementos do vetor
+// - Mostrar na tela a soma e a média dos elementos do vetor 
+
 public class Exe2_SomaVetor {
     
     public static void main(String[] args) {
