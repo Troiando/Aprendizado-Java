@@ -13,6 +13,7 @@ public class linked {
             sony.add("PlayStation 3");
 
             System.out.println(sony);
+            System.out.println(sony.removeLast());
     }
     
 }

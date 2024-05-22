@@ -1,7 +1,6 @@
 package Construtores.For_Vetores.Exemplos.Exemplo2_VetorClass;
 
 import java.util.Scanner;
-import Construtores.Vetores_Arrays.Exemplos.Exemplo2_VetorClass.Class_Vetor;
 
 public class AT1_Class {
     public static void main(String[] args) {

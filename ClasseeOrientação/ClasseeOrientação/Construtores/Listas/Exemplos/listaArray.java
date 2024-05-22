@@ -13,7 +13,25 @@ public class listaArray {
         list.add("Luiz");
         list.add("Paulo");
 
+        //Adiciona elemento na posição 
+        list.add(0,"Carlos");
+
+        for (String nomes : list) {
+            System.out.println(nomes);
+        }
+
+        System.out.println("============");
+
+        //Predicado
+        list.removeIf(x -> x.charAt(0)=='M');
         System.out.println(list);
-        System.out.println(list.get(2));
+
+        //Posição que o nome esta na lista
+        System.out.println("============");
+        System.out.println("Index of Luiz: "+ list.indexOf("Luiz"));
+
+        //List<String> result = list.stream().filter(x -> x.charAt(0) == 'A').collect();
+
+
     }
 }
