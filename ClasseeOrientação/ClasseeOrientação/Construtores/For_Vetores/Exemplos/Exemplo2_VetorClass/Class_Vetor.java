@@ -1,4 +1,4 @@
-package Construtores.Vetores_Arrays.Exemplos.Exemplo2_VetorClass;
+package Construtores.For_Vetores.Exemplos.Exemplo2_VetorClass;
 
 public class Class_Vetor {
     

@@ -1,4 +1,4 @@
-package Construtores.Vetores_Arrays.Praticas;
+package Construtores.For_Vetores.Praticas.ListadeExe;
 
 import java.util.Locale;
 import java.util.Scanner;

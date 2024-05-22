@@ -1,4 +1,4 @@
-package Construtores.Vetores_Arrays.Exemplos.Exemplo1_Vetor;
+package Construtores.For_Vetores.Exemplos.Exemplo1_Vetor;
 
 import java.util.Scanner;
 

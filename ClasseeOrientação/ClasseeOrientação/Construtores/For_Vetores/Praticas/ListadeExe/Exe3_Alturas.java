@@ -1,4 +1,4 @@
-package Construtores.Vetores_Arrays.Praticas;
+package Construtores.For_Vetores.Praticas.ListadeExe;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -26,12 +26,12 @@ public class Exe3_Alturas {
 
         for (int i = 0; i < N; i++) {
             System.out.println("\nDados da " + (i + 1) + " pessoa: ");
-            System.out.println("Digite o nome");
+            System.out.println("Digite o nome: ");
             nome[i] = sc.nextLine();
 
-            System.out.println("Digite o Idade");
+            System.out.println("Digite o Idade: ");
             idade[i] = sc.nextInt();
-            System.out.println("Digite o Altura");
+            System.out.println("Digite o Altura: ");
             alt[i] = sc.nextDouble();
 
             sc.nextLine();
@@ -39,7 +39,7 @@ public class Exe3_Alturas {
             if (idade[i] < 16) {
                 contador++;
             }
-            System.out.println("Nome: " + nome[i] + " Idade: " + idade[i] + "Altura: " + alt[i]);
+            System.out.println("Nome: " + nome[i] + " Idade: " + idade[i] + " Altura: " + alt[i]);
         }
         for (int j = 0; j < N; j++) {
             soma += alt[j];
